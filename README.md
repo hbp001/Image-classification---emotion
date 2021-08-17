@@ -18,4 +18,4 @@
 6. Augmentation : random_rotation → 50, random_perspective
 7. normalize (0.6)
 8. loss = 0.71, val_acc1 = 67.54
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d71d1f26-1376-4e75-a201-de62c862e00e/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d71d1f26-1376-4e75-a201-de62c862e00e/Untitled.png)
+
