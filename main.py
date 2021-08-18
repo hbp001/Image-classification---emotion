@@ -45,7 +45,7 @@ if __name__ == '__main__':
         elif args.arch == 'resnet50':
             model = resnet50(num_classes=7)
         elif args.arch == 'resnet101':
-            model = resnet101(num_classes=7)
+            model = resnet101(num_classes=ww)
         elif args.arch == 'resnet152':
             model = resnet152(num_classes=7)
         else:
@@ -94,10 +94,10 @@ if __name__ == '__main__':
 
     # train and val
     best_perform, best_epoch = -100, -100
-    for epoch in range(1, args.epochs-1):
+    for epoch in range(1, args.epochs):
         for param_group in optimizer.param_groups:
-            param_group['lr'] = lr_per_epoch[epoch]
-        print(f"Training at epoch {epoch}. LR {lr_per_epoch[epoch]}")
+            param_group['lr'] = lr_per_epoch[epoch-1]
+        print(f"Training at epoch {epoch}. LR {lr_per_epoch[epoch-1]}")
 
         train.train(model, dataloader_train, criterion, optimizer, epoch=epoch)
         acc1, acc5 = val.val(model, dataloader_val, epoch=epoch)
