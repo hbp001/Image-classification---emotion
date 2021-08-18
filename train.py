@@ -19,7 +19,7 @@ def train(model, dataloader, criterion, optimizer, epoch=9999):
         loss = criterion(outputs, labels) # 손실 함수-출력이 정답으로부터 얼마나 떨어져 있는지 추정값 계산
        # print(f"loss = criterion(outputs, labels) : {loss}")
         loss.backward() # loss를 역방향에서 실행
-#        optimizer.step() # argument로 전달 받은 parameter 업데이트
+        optimizer.step() # argument로 전달 받은 parameter 업데이트
 
         acc1, acc5 = accuracy(outputs, labels, topk=(1, 5))
         loss_meter.update(loss.item(), images.shape[0])
