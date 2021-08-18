@@ -58,7 +58,7 @@ if __name__ == '__main__':
    # print(model)
     wandb.watch(model)
     
-#     # define batch_manager - dataloader 여기 바꿔주면 될듯/batch_manager코드 분석
+#     # define batch_manager - dataloader 여기 바꿔주면 될듯
     # 
     transform_train = transforms.Compose([transforms.RandomRotation(40, expand=False), transforms.RandomPerspective(), transforms.ToTensor(), transforms.Normalize((0.6, 0.6, 0.6), (0.6, 0.6, 0.6))]) 
     transform_val = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.6, 0.6, 0.6), (0.6, 0.6, 0.6))])
