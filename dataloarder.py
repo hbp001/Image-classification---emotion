@@ -14,14 +14,14 @@ class classification(Dataset):
         self.transform = transform
         if is_train == 1:
             # 해당 폴더 안의 데이터 파일 결로를 리스트에 담아두는 과정이 필요
-            self.data_list = glob.glob('./data/emotion_kaggle/train/*/*')
-            self.label_list = os.listdir('./data/emotion_kaggle/train/')
+            self.data_list = glob.glob('./data/emotion_kaggle/train/*/*') # 경로를 불러옴
+            self.label_list = os.listdir('./data/emotion_kaggle/train/')  # 클래스 목록을 다 가져옴
         else:
-            self.data_list = glob.glob('./data/emotion_kaggle/test/*/*')
+            self.data_list = glob.glob('./data/emotion_kaggle/test/*/*') 
             self.label_list = os.listdir('./data/emotion_kaggle/test/')
 
     # 학습 데이터의 개수를 리턴    
-    def __len__(self):
+    def __len__(self): 
         return len(self.data_list)
 
     # 앞서 만든 리스트의 인덱스 값을 참조해 해당 이미지를 연 다음 이미지 전처리 실행 
@@ -36,3 +36,5 @@ class classification(Dataset):
             image = self.transform(image)
             
         return image, label_idx #, img_path
+
+    # glob이랑 data list, 
